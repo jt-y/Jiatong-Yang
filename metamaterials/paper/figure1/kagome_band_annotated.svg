@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="108pt"
+   version="1.1"
+   viewBox="0 0 121.5 108"
+   width="121.5pt"
+   id="svg1672"
+   sodipodi:docname="kagome_band_annotated.svg"
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     id="namedview1674"
+     showgrid="false"
+     inkscape:zoom="4.0124928"
+     inkscape:cx="75.779296"
+     inkscape:cy="74.511663"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1672" />
+  <metadata
+     id="metadata1582">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:date>2021-10-13T16:49:08.837177</dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Matplotlib v3.3.4, https://matplotlib.org/</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1586">
+    <style
+       type="text/css"
+       id="style1584">*{stroke-linecap:butt;stroke-linejoin:round;}</style>
+  </defs>
+  <g
+     id="figure_1">
+    <g
+       id="patch_1">
+      <path
+         d="M 0 108  L 121.5 108  L 121.5 0  L 0 0  z "
+         style="fill:none;"
+         id="path1588" />
+    </g>
+    <g
+       id="axes_1">
+      <g
+         id="patch_2">
+        <path
+           d="M 15.1875 94.5  L 109.35 94.5  L 109.35 12.96  L 15.1875 12.96  z "
+           style="fill:#ffffff;"
+           id="path1591" />
+      </g>
+      <g
+         id="matplotlib.axis_1">
+        <g
+           id="xtick_1">
+          <g
+             id="line2d_1">
+            <defs
+               id="defs1595">
+              <path
+                 d="M 0 0  L 0 1.5  "
+                 id="m5640e4ff3c"
+                 style="stroke:#000000;stroke-width:0.3;" />
+            </defs>
+            <g
+               id="g1599">
+              <use
+                 style="stroke:#000000;stroke-width:0.3;"
+                 x="15.1875"
+                 xlink:href="#m5640e4ff3c"
+                 y="94.5"
+                 id="use1597" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="xtick_2">
+          <g
+             id="line2d_2">
+            <g
+               id="g1605">
+              <use
+                 style="stroke:#000000;stroke-width:0.3;"
+                 x="55.256649"
+                 xlink:href="#m5640e4ff3c"
+                 y="94.5"
+                 id="use1603" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="xtick_3">
+          <g
+             id="line2d_3">
+            <g
+               id="g1611">
+              <use
+                 style="stroke:#000000;stroke-width:0.3;"
+                 x="75.291223"
+                 xlink:href="#m5640e4ff3c"
+                 y="94.5"
+                 id="use1609" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="xtick_4">
+          <g
+             id="line2d_4">
+            <g
+               id="g1617">
+              <use
+                 style="stroke:#000000;stroke-width:0.3;"
+                 x="109.35"
+                 xlink:href="#m5640e4ff3c"
+                 y="94.5"
+                 id="use1615" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="matplotlib.axis_2">
+        <g
+           id="ytick_1">
+          <g
+             id="line2d_5">
+            <defs
+               id="defs1623">
+              <path
+                 d="M 0 0  L -1.5 0  "
+                 id="mbd6330a1a6"
+                 style="stroke:#000000;stroke-width:0.3;" />
+            </defs>
+            <g
+               id="g1627">
+              <use
+                 style="stroke:#000000;stroke-width:0.3;"
+                 x="15.1875"
+                 xlink:href="#mbd6330a1a6"
+                 y="83.628"
+                 id="use1625" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="ytick_2">
+          <g
+             id="line2d_6">
+            <g
+               id="g1633">
+              <use
+                 style="stroke:#000000;stroke-width:0.3;"
+                 x="15.1875"
+                 xlink:href="#mbd6330a1a6"
+                 y="51.012"
+                 id="use1631" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="ytick_3">
+          <g
+             id="line2d_7">
+            <g
+               id="g1639">
+              <use
+                 style="stroke:#000000;stroke-width:0.3;"
+                 x="15.1875"
+                 xlink:href="#mbd6330a1a6"
+                 y="18.396"
+                 id="use1637" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="line2d_8">
+        <path
+           clip-path="url(#p5c2a87e2eb)"
+           d="M 15.1875 16.818111  L 17.190957 16.848319  L 19.194415 16.875288  L 21.197872 16.91657  L 23.20133 16.972906  L 25.204787 17.043416  L 27.208245 17.126802  L 29.211702 17.221469  L 31.21516 17.325557  L 33.218617 17.43696  L 35.222074 17.55335  L 37.225532 17.67219  L 39.228989 17.790759  L 41.232447 17.906177  L 43.235904 18.015439  L 45.239362 18.115456  L 47.242819 18.203121  L 49.246277 18.275398  L 51.249734 18.329457  L 53.253191 18.36285  L 55.256649 18.373766  L 57.260106 18.360475  L 59.263564 18.324236  L 61.267021 18.267177  L 63.270479 18.193378  L 65.273936 18.10894  L 67.277394 18.021723  L 69.280851 17.940669  L 71.284309 17.874749  L 73.287766 17.831685  L 75.291223 17.816713  L 77.294681 17.808759  L 79.298138 17.785141  L 81.301596 17.746584  L 83.305053 17.694276  L 85.308511 17.62984  L 87.311968 17.555291  L 89.315426 17.472981  L 91.318883 17.385535  L 93.32234 17.295778  L 95.325798 17.206642  L 97.329255 17.121076  L 99.332713 17.041946  L 101.33617 16.971928  L 103.339628 16.913407  L 105.343085 16.868349  L 107.346543 16.838025  L 109.35 16.8206  "
+           style="fill:none;stroke:#ff0000;stroke-linecap:square;stroke-width:0.5;"
+           id="path1644" />
+      </g>
+      <g
+         id="line2d_9">
+        <path
+           clip-path="url(#p5c2a87e2eb)"
+           d="M 15.1875 90.327786  L 17.190957 89.545117  L 19.194415 87.720644  L 21.197872 85.470754  L 23.20133 83.051249  L 25.204787 80.559134  L 27.208245 78.037368  L 29.211702 75.508671  L 31.21516 72.987246  L 33.218617 70.483404  L 35.222074 68.005637  L 37.225532 65.561657  L 39.228989 63.158971  L 41.232447 60.805233  L 43.235904 58.508483  L 45.239362 56.277304  L 47.242819 54.120937  L 49.246277 52.049338  L 51.249734 50.073176  L 53.253191 48.203751  L 55.256649 46.459968  L 57.260106 44.831601  L 59.263564 43.353531  L 61.267021 42.028395  L 63.270479 40.865735  L 65.273936 39.873304  L 67.277394 39.05679  L 69.280851 38.419825  L 71.284309 37.964307  L 73.287766 37.690936  L 75.291223 37.59982  L 77.294681 37.284573  L 79.298138 36.404921  L 81.301596 35.109334  L 83.305053 33.547865  L 85.308511 31.835755  L 87.311968 30.053867  L 89.315426 28.259316  L 91.318883 26.49486  L 93.32234 24.795179  L 95.325798 23.190722  L 97.329255 21.709907  L 99.332713 20.380205  L 101.33617 19.228354  L 103.339628 18.279848  L 105.343085 17.557831  L 107.346543 17.081726  L 109.35 16.867878  "
+           style="fill:none;stroke:#ff0000;stroke-linecap:square;stroke-width:0.5;"
+           id="path1647" />
+      </g>
+      <g
+         id="line2d_10">
+        <path
+           clip-path="url(#p5c2a87e2eb)"
+           d="M 15.1875 16.855826  L 17.190957 16.966918  L 19.194415 17.359632  L 21.197872 18.00427  L 23.20133 18.881418  L 25.204787 19.968652  L 27.208245 21.241288  L 29.211702 22.673955  L 31.21516 24.241806  L 33.218617 25.92127  L 35.222074 27.690424  L 37.225532 29.52906  L 39.228989 31.418572  L 41.232447 33.341727  L 43.235904 35.282373  L 45.239362 37.225142  L 47.242819 39.15514  L 49.246277 41.057665  L 51.249734 42.917944  L 53.253191 44.720906  L 55.256649 46.443859  L 57.260106 48.093682  L 59.263564 49.629573  L 61.267021 51.04249  L 63.270479 52.314863  L 65.273936 53.429209  L 67.277394 54.368693  L 69.280851 55.117843  L 71.284309 55.663375  L 73.287766 55.995034  L 75.291223 56.106328  L 77.294681 56.457793  L 79.298138 57.446775  L 81.301596 58.926834  L 83.305053 60.751354  L 85.308511 62.81  L 87.311968 65.028354  L 89.315426 67.35736  L 91.318883 69.763941  L 93.32234 72.224602  L 95.325798 74.721225  L 97.329255 77.237969  L 99.332713 79.758279  L 101.33617 82.260516  L 103.339628 84.708864  L 105.343085 87.029218  L 107.346543 89.035702  L 109.35 90.240801  "
+           style="fill:none;stroke:#ff0000;stroke-linecap:square;stroke-width:0.5;"
+           id="path1650" />
+      </g>
+      <g
+         id="patch_3">
+        <path
+           d="M 15.1875 94.5  L 15.1875 12.96  "
+           style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.5;"
+           id="path1653" />
+      </g>
+      <g
+         id="patch_4">
+        <path
+           d="M 109.35 94.5  L 109.35 12.96  "
+           style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.5;"
+           id="path1656" />
+      </g>
+      <g
+         id="patch_5">
+        <path
+           d="M 15.1875 94.5  L 109.35 94.5  "
+           style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.5;"
+           id="path1659" />
+      </g>
+      <g
+         id="patch_6">
+        <path
+           d="M 15.1875 12.96  L 109.35 12.96  "
+           style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.5;"
+           id="path1662" />
+      </g>
+    </g>
+  </g>
+  <defs
+     id="defs1670">
+    <clipPath
+       id="p5c2a87e2eb">
+      <rect
+         height="81.54"
+         width="94.1625"
+         x="15.1875"
+         y="12.96"
+         id="rect1667" />
+    </clipPath>
+  </defs>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:4.00000012px;line-height:1.25;font-family:Arial;white-space:pre;inline-size:7.33774;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75;-inkscape-font-specification:'Arial, Normal';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;"
+     x="7.6961508"
+     y="17.434139"
+     id="text2239"
+     transform="translate(0.47119292,2.3559647)"><tspan
+       x="7.6961508"
+       y="17.434139"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round">14</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;inline-size:7.33774;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round"
+     x="7.6961508"
+     y="17.434139"
+     id="text2239-7"
+     transform="translate(2.5348773,35.070745)"><tspan
+       x="7.6961508"
+       y="17.434139"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-linecap:butt;stroke-linejoin:round">8</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;inline-size:7.33774;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round"
+     x="7.6961508"
+     y="17.434139"
+     id="text2239-76"
+     transform="translate(2.5231524,67.718637)"><tspan
+       x="7.6961508"
+       y="17.434139"><tspan
+         style="stroke-linecap:butt;stroke-linejoin:round">2</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:4px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round"
+     x="53.831875"
+     y="100.1871"
+     id="text2301"><tspan
+       sodipodi:role="line"
+       id="tspan2299"
+       x="53.831875"
+       y="100.1871"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75">K</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:4px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round"
+     x="73.176262"
+     y="100.2029"
+     id="text2301-4"><tspan
+       sodipodi:role="line"
+       id="tspan2299-5"
+       x="73.176262"
+       y="100.2029"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75">M</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:4px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round"
+     x="14.205634"
+     y="99.43943"
+     id="text2329"><tspan
+       sodipodi:role="line"
+       id="tspan2327"
+       x="14.205634"
+       y="99.43943"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75">Γ</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:4px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round"
+     x="108.20633"
+     y="99.455238"
+     id="text2329-1"><tspan
+       sodipodi:role="line"
+       id="tspan2327-0"
+       x="108.20633"
+       y="99.455238"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75">Γ</tspan></text>
+  <path
+     style="fill:#b3b3b3;stroke:#000000;stroke-width:0.22499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.89999995, 0.44999997000000003;stroke-dashoffset:0;stroke-opacity:0.2"
+     d="M 55.290286,94.766527 V 12.710303"
+     id="path2361" />
+  <path
+     style="fill:#b3b3b3;stroke:#000000;stroke-width:0.225;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.9, 0.45000000000000001;stroke-dashoffset:0;stroke-opacity:0.2;fill-opacity:1"
+     d="M 75.27837,95.08821 V 13.031986"
+     id="path2361-9" />
+  <text
+     xml:space="preserve"
+     style="font-size:4px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';stroke-width:0.75"
+     x="-72.16552"
+     y="5.3992882"
+     id="text2385"
+     transform="rotate(-90)"><tspan
+       sodipodi:role="line"
+       id="tspan2383"
+       x="-72.16552"
+       y="5.3992882"
+       style="stroke-width:0.75">Frequency (kHz)</tspan></text>
+</svg>
