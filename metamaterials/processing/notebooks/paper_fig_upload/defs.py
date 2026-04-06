@@ -9,6 +9,9 @@ from tqdm.notebook import tqdm
 from os import listdir
 from os.path import isfile, join
 import shutil, os
+import matplotlib.colors as colors
+import matplotlib.cm as cm
+from matplotlib import patches as ptc
 
 import sys
 
@@ -16,6 +19,58 @@ sys.path.append('../../functions')
 
 import chirp_functions as proc
 import stmpy
+
+def preprocess_chirp(setno, data_dir, frequencies, targetfile, title = 'scppos_'):
+    fnames = list(sorted(glob.glob(os.path.join(data_dir, "*.pkl"))))
+    
+    print('Found %s records' % len(fnames))
+    
+    data = [[] for _ in frequencies]
+    
+    for fname in fnames:
+        with open(fname, 'rb') as f:
+            chirp_data = pickle.load(f)
+               
+        x, y = [float(coord) for coord in os.path.basename(fname).replace('.pkl', '').replace(title, '').split('_')]
+        
+        for point in chirp_data:
+            freq_index = np.where(frequencies == point[0])[0][0] 
+            data[freq_index].append((x, y, point[1], point[2]))
+                
+    if not data:
+        raise RuntimeError('No Data Found')  
+        
+    for freq in frequencies:
+        index = np.where(frequencies == freq)[0][0]       
+        np.array(data[index]).dump(targetfile + '_' + str(freq) + '_' + str(setno) + '.pkl')
+    
+    print('Preprocessing complete!')
+
+
+def central_cut(real_data, source_pos, edge_relax):
+    """
+    Get the central hexagonal part of the real space data.
+    real_data: [[x_coord, y_coord, amp, phase], ...].
+    Also shift the origin to the source position
+    """
+    
+    x = real_data[:, 0] - source_pos[0]
+    y = real_data[:, 1] - source_pos[1]
+    amp = real_data[:, 2]
+    phase = real_data[:, 3]
+
+    x_unit = 10*np.sqrt(3)/4*1e-3
+    y_unit = 7.5*1e-3
+
+    # Get the central hexagon
+    y_mask = (np.abs(y) <= y_unit*8.2) 
+    xy_mask_1 = (np.abs(y+y_unit/x_unit*x) <= y_unit*16+edge_relax)
+    xy_mask_2 = (np.abs(y-y_unit/x_unit*x) <= y_unit*16+edge_relax)
+    source_mask = (np.sqrt(x**2 + y**2) > edge_relax)  # Avoid the source point
+    mask = y_mask & xy_mask_1 & xy_mask_2 & source_mask
+
+
+    return np.column_stack((x[mask], y[mask], amp[mask], phase[mask]))
 
 
 
@@ -133,3 +188,60 @@ def rotate_points(points, angles):
 
     return rotated_points
     
+
+def real_space_plot(
+    x_coords,
+    y_coords,
+    value,
+    max_amp,
+    radius,
+    out_path=None,
+    xlim=(-75, 75),
+    ylim=(-75, 75),
+    cmap="bwr",
+    cbar_ticks=(-3, 0, 3),
+    cbar_label="Amplitude (Pa)",
+    figsize=(2.5, 2.5),
+    dpi=300,
+    cbar_shrink=0.7,
+):
+    fig = plt.figure(figsize=figsize, dpi=dpi)
+    ax = fig.gca()
+    ax.set_aspect("equal")
+    ax.set_xlim(*xlim)
+    ax.set_ylim(*ylim)
+    ax.axis("off")
+    plt.yticks([])
+    plt.xticks([])
+
+    norm = colors.Normalize(vmin=-max_amp, vmax=max_amp)
+    cbar = fig.colorbar(
+        cm.ScalarMappable(norm=norm, cmap=cmap),
+        ax=ax,
+        shrink=cbar_shrink,
+    )
+
+    for x_i, y_i, v_i in zip(x_coords, y_coords, value):
+        circle = ptc.Ellipse(
+            (x_i, y_i),
+            width=radius * 2,
+            height=radius * 2,
+            edgecolor="black",
+            facecolor=plt.get_cmap(cmap)((v_i + max_amp) / (2 * max_amp)),
+            fill=True,
+            alpha=1,
+            linewidth=0.25,
+        )
+        ax.add_patch(circle)
+
+    cbar_ticks = np.array(cbar_ticks)
+    cbar.set_ticks(cbar_ticks)
+    cbar.outline.set_linewidth(0.25)
+    cbar.set_label(cbar_label, fontsize=6, rotation=270)
+    cbar.ax.set_yticklabels([f"{tick:g}" for tick in cbar_ticks], fontsize=6)
+    cbar.ax.tick_params(width=0.25, length=1)
+
+    if out_path is not None:
+        plt.savefig(out_path, bbox_inches="tight")
+
+    return fig, ax
