@@ -12,13 +12,13 @@ import shutil, os
 import matplotlib.colors as colors
 import matplotlib.cm as cm
 from matplotlib import patches as ptc
+import stmpy
 
 import sys
 
 sys.path.append('../../functions')
 
-import chirp_functions as proc
-import stmpy
+
 
 def preprocess_chirp(setno, data_dir, frequencies, targetfile, title = 'scppos_'):
     fnames = list(sorted(glob.glob(os.path.join(data_dir, "*.pkl"))))
@@ -187,6 +187,52 @@ def rotate_points(points, angles):
     rotated_points = np.einsum('ijk,j->ik', rotation_matrices, points)
 
     return rotated_points
+
+def mirror_point(pt_coord, line_slope):
+    x0 = pt_coord[0]
+    y0 = pt_coord[1]
+
+    # first find the angle between the point and the line
+    angle = np.arctan2(line_slope, 1) - np.arctan2(y0, x0)
+
+    # then find the mirrored point by rotating (x0, y0) by 2 times the angle
+    x1 = x0 * np.cos(2*angle) - y0 * np.sin(2*angle)
+    y1 = x0 * np.sin(2*angle) + y0 * np.cos(2*angle)
+
+    return x1, y1
+
+
+
+def symmetry_k_points(kx, ky, angles):
+    """Return 6 rotated and 6 mirrored-then-rotated (kx, ky) pairs."""
+    kx_mirr, ky_mirr = mirror_point((kx, ky), 1 / np.sqrt(3))
+    c = np.cos(angles)
+    s = np.sin(angles)
+
+    kx_rot = kx * c - ky * s
+    ky_rot = kx * s + ky * c
+    kx_mrot = kx_mirr * c - ky_mirr * s
+    ky_mrot = kx_mirr * s + ky_mirr * c
+
+    return np.concatenate([kx_rot, kx_mrot]), np.concatenate([ky_rot, ky_mrot])
+
+
+def fourier_symmetrized_amplitude(points, kx_ops, ky_ops):
+    """Mean |FT| over all symmetry-related k-points for one sublattice."""
+    if len(points) == 0:
+        return 0.0
+
+    pts = np.asarray(points)
+    x = pts[:, 0]
+    y = pts[:, 1]
+    amp = pts[:, 2]
+    phase0 = np.deg2rad(pts[:, 3])
+
+    phases = np.outer(kx_ops, x) + np.outer(ky_ops, y) + phase0
+    ft_vals = np.abs((amp[None, :] * np.exp(-1j * phases)).sum(axis=1))
+    return ft_vals.mean()
+
+
     
 
 def real_space_plot(
@@ -200,10 +246,10 @@ def real_space_plot(
     ylim=(-75, 75),
     cmap="bwr",
     cbar_ticks=(-3, 0, 3),
-    cbar_label="Amplitude (Pa)",
+    cbar_label=r'$p(\mathbf{r}, f)$ (Pa)',
     figsize=(2.5, 2.5),
     dpi=300,
-    cbar_shrink=0.7,
+    cbar_shrink=0.5,
 ):
     fig = plt.figure(figsize=figsize, dpi=dpi)
     ax = fig.gca()
@@ -237,7 +283,7 @@ def real_space_plot(
     cbar_ticks = np.array(cbar_ticks)
     cbar.set_ticks(cbar_ticks)
     cbar.outline.set_linewidth(0.25)
-    cbar.set_label(cbar_label, fontsize=6, rotation=270)
+    cbar.set_label(cbar_label, fontsize=6, rotation=270, labelpad=5)
     cbar.ax.set_yticklabels([f"{tick:g}" for tick in cbar_ticks], fontsize=6)
     cbar.ax.tick_params(width=0.25, length=1)
 
