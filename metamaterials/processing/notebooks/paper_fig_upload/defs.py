@@ -217,10 +217,9 @@ def symmetry_k_points(kx, ky, angles):
     return np.concatenate([kx_rot, kx_mrot]), np.concatenate([ky_rot, ky_mrot])
 
 
+
 def fourier_symmetrized_amplitude(points, kx_ops, ky_ops):
     """Mean |FT| over all symmetry-related k-points for one sublattice."""
-    if len(points) == 0:
-        return 0.0
 
     pts = np.asarray(points)
     x = pts[:, 0]
@@ -232,7 +231,7 @@ def fourier_symmetrized_amplitude(points, kx_ops, ky_ops):
     ft_vals = np.abs((amp[None, :] * np.exp(-1j * phases)).sum(axis=1))
     return ft_vals.mean()
 
-
+####### Visualization functions
     
 
 def real_space_plot(
@@ -291,3 +290,54 @@ def real_space_plot(
         plt.savefig(out_path, bbox_inches="tight")
 
     return fig, ax
+
+
+def plot_2d_fourier_transform(
+    reciprocal_data,
+    kxs,
+    kys,
+    BZ_points,
+    out_dir,
+    freq,
+    scale=1,
+    cmap=stmpy.cm.blue3_r,
+    vmin=0,
+    vmax=1,
+    figsize=(3, 3),
+    save=True,
+    save_fn='2D_DFT',
+):
+    fig, ax = plt.subplots(figsize=figsize)
+    im = ax.imshow(
+        reciprocal_data / scale,
+        extent=[kxs[0], kxs[-1], kys[0], kys[-1]],
+        aspect="equal",
+        origin="lower",
+        cmap=cmap,
+        vmax=vmax,
+        vmin=vmin,
+    )
+    ax.plot(BZ_points[:, 0], BZ_points[:, 1], "r:", linewidth=0.25)
+
+    for axis in ["top", "bottom", "left", "right"]:
+        ax.spines[axis].set_linewidth(0.25)
+    ax.set_xlim([kxs[0], kxs[-1]])
+    ax.set_ylim([kys[0], kys[-1]])
+    ax.set_xticks([-400, 0, 400], [400, 0, 400], size=8)
+    ax.set_yticks([-400, 0, 400], [400, 0, 400], size=8)
+    ax.xaxis.set_tick_params(width=0.25, length=1)
+    ax.yaxis.set_tick_params(width=0.25, length=1)
+    ax.set_xlabel(r"$k_x$ (1/m)", fontsize=8)
+    ax.set_ylabel(r"$k_y$ (1/m)", fontsize=8)
+
+    cb = plt.colorbar(im, location="right", pad=0.07, aspect=15, shrink=0.7)
+    cb.set_ticks([0, 1])
+    cb.ax.yaxis.set_tick_params(width=0.25, length=1)
+    cb.ax.tick_params(labelsize=8)
+    cb.outline.set_linewidth(0.25)
+    cb.set_label(r"$|\tilde{p}(\mathbf{k}, f)|$ (A.U.)", fontsize=8, rotation=270, labelpad=5)
+
+    if save:
+        fig.savefig(out_dir + "/{}_{}Hz.pdf".format(save_fn, freq), bbox_inches="tight")
+
+    return fig, ax, cb
