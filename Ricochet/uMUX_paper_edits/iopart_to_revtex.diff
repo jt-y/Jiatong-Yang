@@ -1,0 +1,444 @@
+diff --git a/iopart/main.tex b/revtex/main.tex
+index f3ab19b..0adfdf6 100644
+--- a/iopart/main.tex
++++ b/revtex/main.tex
+@@ -4,77 +4,353 @@
+ % https://publishingsupport.iopscience.iop.org/journals/superconductor-science-and-technology/#article-format-and-templates
+ 
+ 
+-\documentclass[10pt]{iopart}
++\documentclass[
++ prd,
++ reprint,
++ superscriptaddress,
++ amsmath,amssymb,
++ aps,
++ floatfix,
++]{revtex4-2}
+ 
+ 
+-\usepackage{iopams}
+ \usepackage{makecell}
++\usepackage[english]{babel}
+ \usepackage{xcolor}
+ \usepackage{xspace}
+ \usepackage{graphicx}
+-\usepackage{amsmath}
+ \usepackage{siunitx}
+ \usepackage{upgreek}
+-\usepackage{multirow, multicol}
++\usepackage{multirow}
+ \usepackage{hyperref}
+ \usepackage{cleveref}
+-\usepackage[square,sort&compress]{natbib}
+-\bibpunct{[}{]}{,}{n}{}{;}
+ 
+ 
+ 
+-% Comments
+-\newcommand{\jy}[1]{\textcolor{cyan}{#1 -- Jiatong} }
++% Commands
+ \newcommand{\ricochet}{\textsc{Ricochet}\xspace}
+ \newcommand{\cevns}{CE$\nu$NS\xspace}
+ \newcommand{\uMUX}{$\mu$MUX\xspace}
+ \newcommand{\uPhirtHz}{$\upmu \Phi_0/\sqrt{\text{Hz}}$\xspace}
++\newcommand{\ack}{\section*{Acknowledgments}}
++\newenvironment{indented}{\begin{description}}{\end{description}}
+ 
+ \begin{document}
+ 
+ 
+ \title{Characterization of Aluminum Microwave SQUID Multiplexers for \cevns Detection}
+ 
+-\author{\mbox{J Amidei\textsuperscript{1}}, \mbox{A Armatol\textsuperscript{2}}, \mbox{C Augier\textsuperscript{2}}, \mbox{L Bailly-Salins\textsuperscript{3}}, \mbox{G Baulieu\textsuperscript{2}}, \mbox{L Bergé\textsuperscript{4}}, \mbox{J Billard\textsuperscript{2}}, \mbox{J Blé\textsuperscript{3}}, \mbox{G Brenot\textsuperscript{3}}, \mbox{G Bres\textsuperscript{5}}, \mbox{J-L Bret\textsuperscript{5}}, \mbox{A Broniatowski\textsuperscript{4}}, \mbox{M Calvo\textsuperscript{5}}, \mbox{A Cavanna\textsuperscript{6}}, \mbox{A Cazes\textsuperscript{2}}, \mbox{E Celi\textsuperscript{7}}, \mbox{D Chaize\textsuperscript{2}}, \mbox{M Chala\textsuperscript{3}}, \mbox{M Chapellier\textsuperscript{4}}, \mbox{L Chaplinsky\textsuperscript{8}}, \mbox{R Chen\textsuperscript{7}}, \mbox{I Cojocari\textsuperscript{4}}, \mbox{J Colas\textsuperscript{2}}, \mbox{L Couraud\textsuperscript{6}}, \mbox{E Cudmore\textsuperscript{9}}, \mbox{M De Jesus\textsuperscript{2}}, \mbox{P de Marcillac\textsuperscript{4}}, \mbox{R Martin\textsuperscript{3}}, \mbox{N Dombrowski\textsuperscript{10}}, \mbox{L Dumoulin\textsuperscript{4}}, \mbox{A Durnez\textsuperscript{6}}, \mbox{R Faure\textsuperscript{2}}, \mbox{S Ferriol\textsuperscript{2}}, \mbox{E Figueroa-Feliciano\textsuperscript{7}}, \mbox{J  A Formaggio\textsuperscript{10, 11}}, \mbox{S Fuard\textsuperscript{12}}, \mbox{J Gascon\textsuperscript{2}}, \mbox{C Girard-Carillo\textsuperscript{3}}, \mbox{A Giuliani\textsuperscript{4}}, \mbox{C Goy\textsuperscript{3}}, \mbox{C Guerin\textsuperscript{2}}, \mbox{L Haegel\textsuperscript{2}}, \mbox{P  M Harrington\textsuperscript{10, 13}}, \mbox{S A Hertel\textsuperscript{8}}, \mbox{C  F Hirjibehedin\textsuperscript{14}}, \mbox{C Hoarau\textsuperscript{3}}, \mbox{Z Hong\textsuperscript{9}}, \mbox{D Howard\textsuperscript{1}}, \mbox{J-C Ianigro\textsuperscript{2}}, \mbox{Y Jin\textsuperscript{6}}, \mbox{A Juillard\textsuperscript{2}}, \mbox{D Karaivanov\textsuperscript{15}}, \mbox{T Khussainov\textsuperscript{15}}\footnote{Also at Institute of Nuclear Physics of the Ministry of Energy of the Republic of Kazakhstan, 1 Ibragimov Street, 050032, Almaty, Kazakhstan}, \mbox{A Kubik\textsuperscript{9}}\footnote{Also at SNOLAB, Creighton Mine \#9, 1039 Regional Road 24, Sudbury, ON P3Y 1N2, Canada}, \mbox{J Lamblin\textsuperscript{3}}, \mbox{T Le Bellec\textsuperscript{2}}, \mbox{L Leroy\textsuperscript{6}}, \mbox{M Li\textsuperscript{10, 11}}, \mbox{A Lubashevskiy\textsuperscript{15}}, \mbox{S Marnieros\textsuperscript{4}}, \mbox{N Martini\textsuperscript{2}}, \mbox{J Minet\textsuperscript{5}}, \mbox{A Monfardini\textsuperscript{5}}, \mbox{F Mounier\textsuperscript{2}}, \mbox{B  M Niedzielski\textsuperscript{14}}, \mbox{V Novati\textsuperscript{3}}, \mbox{W  D Oliver\textsuperscript{11, 13, 16}}, \mbox{E Olivieri\textsuperscript{4}}, \mbox{H D Pinckney\textsuperscript{10, 13}}, \mbox{D V Poda\textsuperscript{4}}, \mbox{D Ponomarev\textsuperscript{15}}\footnote{Also at Lebedev Physical Institute of the Russian Academy of
+-Sciences, 53 Leninskiy Prospect, 119991, Moscow, Russia}, \mbox{J-S Real\textsuperscript{3}}, \mbox{F  C Reyes\textsuperscript{10, 11}}, \mbox{A Rodriguez\textsuperscript{7}}, \mbox{S Rozov\textsuperscript{15}}, \mbox{I Rozova\textsuperscript{15}}, \mbox{B Ryan\textsuperscript{10}}, \mbox{D Sabhari\textsuperscript{7}}, \mbox{S Scorza\textsuperscript{3}}, \mbox{K Serniak\textsuperscript{13, 14}}, \mbox{R Serra\textsuperscript{3, 12}}, \mbox{Ye Shevchik\textsuperscript{15}}, \mbox{T Soldner\textsuperscript{12}}, \mbox{H Stickler\textsuperscript{14}}, \mbox{C Stone-Whitehead\textsuperscript{1}}, \mbox{Ch Ulysse\textsuperscript{6}}, \mbox{W Van De Pontseele\textsuperscript{1}}, \mbox{S Vasilyev\textsuperscript{15}}, \mbox{P Vittaz\textsuperscript{2}}, \mbox{S Weber\textsuperscript{14}}, \mbox{E Wolfe\textsuperscript{1}}, \mbox{W Woods\textsuperscript{14}}, \mbox{E Yakushev\textsuperscript{15}}, \mbox{J Yang\textsuperscript{10, 11}}, \mbox{D Zinatulina\textsuperscript{15}}}
++\author{J Amidei}
++\affiliation{Physics Department, Colorado School of Mines, Golden, Colorado 80401, USA}
+ 
+-\address{$^{1}$Physics Department, Colorado School of Mines, Golden, Colorado 80401, USA}
+-\address{$^{2}$Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
+-\address{$^{3}$Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
+-\address{$^{4}$Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
+-\address{$^{5}$Université Grenoble Alpes, CNRS, Grenoble INP, Institut Néel, 38000 Grenoble, France}
+-\address{$^{6}$Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
+-\address{$^{7}$Department of Physics and Astronomy, Northwestern University, Evanston, Illinois 60208, USA}
+-\address{$^{8}$Department of Physics, University of Massachusetts at Amherst, Amherst, Massachusetts 01003, USA}
+-\address{$^{9}$Department of Physics, University of Toronto, Toronto, Ontario M5S 1A7, Canada}
+-\address{$^{10}$Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
+-\address{$^{11}$Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
+-\address{$^{12}$Institut Laue-Langevin, CS 20156, 38042 Grenoble Cedex 9, France}
+-\address{$^{13}$Research Laboratory of Electronics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
+-\address{$^{14}$Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
+-\address{$^{15}$Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
+-\address{$^{16}$Electrical Engineering and Computer Science Department, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++\author{A Armatol}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
+ 
++\author{C Augier}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
+ 
++\author{L Bailly-Salins}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
+ 
+-\ead{jiatongy@mit.edu, wouter.vandepontseele@mines.edu}
+-\vspace{10pt}
+-\begin{indented}
+-    \item[\today]
+-\end{indented}
++\author{G Baulieu}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
+ 
++\author{L Bergé}
++\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
++
++\author{J Billard}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{J Blé}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
++
++\author{G Brenot}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
++
++\author{G Bres}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, Institut Néel, 38000 Grenoble, France}
++
++\author{J-L Bret}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, Institut Néel, 38000 Grenoble, France}
++
++\author{A Broniatowski}
++\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
++
++\author{M Calvo}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, Institut Néel, 38000 Grenoble, France}
++
++\author{A Cavanna}
++\affiliation{Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
++
++\author{A Cazes}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{E Celi}
++\affiliation{Department of Physics and Astronomy, Northwestern University, Evanston, Illinois 60208, USA}
++
++\author{D Chaize}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{M Chala}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
++
++\author{M Chapellier}
++\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
++
++\author{L Chaplinsky}
++\affiliation{Department of Physics, University of Massachusetts at Amherst, Amherst, Massachusetts 01003, USA}
++
++\author{R Chen}
++\affiliation{Department of Physics and Astronomy, Northwestern University, Evanston, Illinois 60208, USA}
++
++\author{I Cojocari}
++\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
++
++\author{J Colas}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{L Couraud}
++\affiliation{Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
++
++\author{E Cudmore}
++\affiliation{Department of Physics, University of Toronto, Toronto, Ontario M5S 1A7, Canada}
++
++\author{M De Jesus}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{P de Marcillac}
++\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
++
++\author{R Martin}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
++
++\author{N Dombrowski}
++\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++
++\author{L Dumoulin}
++\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
++
++\author{A Durnez}
++\affiliation{Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
++
++\author{R Faure}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{S Ferriol}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{E Figueroa-Feliciano}
++\affiliation{Department of Physics and Astronomy, Northwestern University, Evanston, Illinois 60208, USA}
++
++\author{J A Formaggio}
++\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++\affiliation{Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++
++\author{S Fuard}
++\affiliation{Institut Laue-Langevin, CS 20156, 38042 Grenoble Cedex 9, France}
++
++\author{J Gascon}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{C Girard-Carillo}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
++
++\author{A Giuliani}
++\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
++
++\author{C Goy}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
++
++\author{C Guerin}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{L Haegel}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{P M Harrington}
++\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++\affiliation{Research Laboratory of Electronics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++
++\author{S A Hertel}
++\affiliation{Department of Physics, University of Massachusetts at Amherst, Amherst, Massachusetts 01003, USA}
++
++\author{C F Hirjibehedin}
++\affiliation{Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
++
++\author{C Hoarau}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
++
++\author{Z Hong}
++\affiliation{Department of Physics, University of Toronto, Toronto, Ontario M5S 1A7, Canada}
++
++\author{D Howard}
++\affiliation{Physics Department, Colorado School of Mines, Golden, Colorado 80401, USA}
++
++\author{J-C Ianigro}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{Y Jin}
++\affiliation{Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
++
++\author{A Juillard}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{D Karaivanov}
++\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
++
++\author{T Khussainov}
++\altaffiliation{also at: Institute of Nuclear Physics of the Ministry of Energy of the Republic of Kazakhstan, 1 Ibragimov Street, 050032, Almaty, Kazakhstan}
++\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
++
++\author{A Kubik}
++\altaffiliation{also at: SNOLAB, Creighton Mine \#9, 1039 Regional Road 24, Sudbury, ON P3Y 1N2, Canada}
++\affiliation{Department of Physics, University of Toronto, Toronto, Ontario M5S 1A7, Canada}
++
++\author{J Lamblin}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
++
++\author{T Le Bellec}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{L Leroy}
++\affiliation{Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
++
++\author{M Li}
++\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++\affiliation{Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++
++\author{A Lubashevskiy}
++\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
++
++\author{S Marnieros}
++\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
++
++\author{N Martini}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{J Minet}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, Institut Néel, 38000 Grenoble, France}
++
++\author{A Monfardini}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, Institut Néel, 38000 Grenoble, France}
++
++\author{F Mounier}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{B M Niedzielski}
++\affiliation{Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
++
++\author{V Novati}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
++
++\author{W D Oliver}
++\affiliation{Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++\affiliation{Research Laboratory of Electronics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++\affiliation{Electrical Engineering and Computer Science Department, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++
++\author{E Olivieri}
++\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
++
++\author{H D Pinckney}
++\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++\affiliation{Research Laboratory of Electronics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++
++\author{D V Poda}
++\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
++
++\author{D Ponomarev}
++\altaffiliation{also at: Lebedev Physical Institute of the Russian Academy of Sciences, 53 Leninskiy Prospect, 119991, Moscow, Russia}
++\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
++
++\author{J-S Real}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
++
++\author{F C Reyes}
++\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++\affiliation{Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++
++\author{A Rodriguez}
++\affiliation{Department of Physics and Astronomy, Northwestern University, Evanston, Illinois 60208, USA}
++
++\author{S Rozov}
++\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
++
++\author{I Rozova}
++\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
++
++\author{B Ryan}
++\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++
++\author{D Sabhari}
++\affiliation{Department of Physics and Astronomy, Northwestern University, Evanston, Illinois 60208, USA}
++
++\author{S Scorza}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
++
++\author{K Serniak}
++\affiliation{Research Laboratory of Electronics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++\affiliation{Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
++
++\author{R Serra}
++\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
++\affiliation{Institut Laue-Langevin, CS 20156, 38042 Grenoble Cedex 9, France}
++
++\author{Ye Shevchik}
++\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
++
++\author{T Soldner}
++\affiliation{Institut Laue-Langevin, CS 20156, 38042 Grenoble Cedex 9, France}
++
++\author{H Stickler}
++\affiliation{Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
++
++\author{C Stone-Whitehead}
++\affiliation{Physics Department, Colorado School of Mines, Golden, Colorado 80401, USA}
++
++\author{Ch Ulysse}
++\affiliation{Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
++
++\author{W Van De Pontseele}
++\email{wouter.vandepontseele@mines.edu}
++\affiliation{Physics Department, Colorado School of Mines, Golden, Colorado 80401, USA}
++
++\author{S Vasilyev}
++\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
++
++\author{P Vittaz}
++\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
++
++\author{S Weber}
++\affiliation{Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
++
++\author{E Wolfe}
++\affiliation{Physics Department, Colorado School of Mines, Golden, Colorado 80401, USA}
++
++\author{W Woods}
++\affiliation{Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
++
++\author{E Yakushev}
++\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
++
++\author{J Yang}
++\email{jiatongy@mit.edu}
++\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++\affiliation{Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
++
++\author{D Zinatulina}
++\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
++
++\date{\today}
+ 
+ \begin{abstract}
+ We present the design, fabrication, and characterization of an aluminum-based six-channel microwave SQUID multiplexer (\uMUX) prototype for transition-edge sensor (TES) readout in the \ricochet experiment. The device consists of aluminum coplanar-waveguide resonators and RF SQUIDs with Dolan-style Al/AlO$_x$/Al Josephson junctions. By measuring the resonator scattering parameters at a range of probe tone frequencies, powers, and flux bias points, we demonstrate agreement between the device response and existing multiplexer models. We also characterize the noise performance in both open-loop and flux-ramping modes. With a high electron mobility transistor (HEMT) amplifier, open-loop measurements yield a flux sensitivity of 1--1.5~\uPhirtHz. With flux-ramp modulation, low-frequency $1/f$ noise is suppressed, and the flux sensitivity is around 3--4~\uPhirtHz, corresponding to a current sensitivity of 24--33~$\mathrm{pA}/\sqrt{\mathrm{Hz}}$ at the input coil. We further demonstrate a reduction in readout noise by incorporating a Josephson traveling-wave parametric amplifier (JTWPA) between the \uMUX and the HEMT. This achieves an open-loop flux sensitivity of 0.3--0.6~\uPhirtHz and an effective system noise temperature below \qty{1}{\K}. These results establish aluminum $\mu$MUX devices as a viable and extensible readout technology for low-noise cryogenic detector arrays.
+-\end{abstract}
+ 
++\medskip
++\noindent\textbf{Keywords}: microwave SQUID multiplexer, cryogenic sensor array readout, aluminum fabrication process, Josephson traveling-wave parametric amplifier
+ 
++\end{abstract}
+ 
+-\vspace{2pc}
+-\noindent{\it Keywords}: microwave SQUID multiplexer, cryogenic sensor array readout, aluminum fabrication process, Josephson traveling-wave parametric amplifier
+-
+-\submitto{\SUST}
+-\ioptwocol
++\maketitle
+ 
+ %-----------------------------------------------
+ \section{Introduction}
+@@ -706,7 +982,7 @@ The measurement is repeated for several input powers below the \qty{1}{\dB} comp
+ 
+ 
+ \bibliography{references}
+-\bibliographystyle{iopart-num}
++\bibliographystyle{apsrev4-2}
+ 
+ 
+ \end{document}
+diff --git a/iopart/references.bib b/revtex/references.bib
+index abb5308..fbbdc6c 100644
+--- a/iopart/references.bib
++++ b/revtex/references.bib
+@@ -54,7 +54,7 @@
+ 	volume = {99},
+ 	isbn = {978-3-540-20113-7 978-3-540-31478-3},
+ 	doi = {10.1007/10933596_3},
+-	language = {en},
++	language = {english},
+ 	urldate = {2026-05-15},
+ 	booktitle = {Cryogenic {Particle} {Detection}},
+ 	publisher = {Springer Berlin Heidelberg},
+@@ -251,7 +251,7 @@
+ 	volume = {130},
+ 	issn = {0031-9007, 1079-7114},
+ 	doi = {10.1103/PhysRevLett.130.220602},
+-	language = {en},
++	language = {english},
+ 	number = {22},
+ 	urldate = {2026-03-17},
+ 	journal = {Physical Review Letters},
+@@ -340,7 +340,7 @@
+ 	volume = {50},
+ 	issn = {0003-6951, 1077-3118},
+ 	doi = {10.1063/1.98041},
+-	language = {en},
++	language = {english},
+ 	number = {12},
+ 	urldate = {2026-03-09},
+ 	journal = {Applied Physics Letters},
+@@ -357,7 +357,7 @@
+ 	issn = {0022-2291, 1573-7357},
+ 	url = {http://link.springer.com/10.1007/BF00683423},
+ 	doi = {10.1007/BF00683423},
+-	language = {en},
++	language = {english},
+ 	number = {1-2},
+ 	urldate = {2026-03-09},
+ 	journal = {Journal of Low Temperature Physics},

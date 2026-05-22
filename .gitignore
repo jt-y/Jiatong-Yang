@@ -138,8 +138,19 @@ Manifest.toml
 /notebooks/dcsquid/*.pkl
 
 *.hdf5
+*.pdf
 
 # Data folder (Symbolic Link)
 data*/
 data*
 data/
+
+
+# Latex auxiliary files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
