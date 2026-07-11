@@ -1,8 +1,8 @@
 diff --git a/iopart/main.tex b/revtex/main.tex
-index f3ab19b..0adfdf6 100644
+index f3ab19b..f5438b6 100644
 --- a/iopart/main.tex
 +++ b/revtex/main.tex
-@@ -4,77 +4,353 @@
+@@ -4,27 +4,30 @@
  % https://publishingsupport.iopscience.iop.org/journals/superconductor-science-and-technology/#article-format-and-templates
  
  
@@ -41,18 +41,13 @@ index f3ab19b..0adfdf6 100644
  \newcommand{\ricochet}{\textsc{Ricochet}\xspace}
  \newcommand{\cevns}{CE$\nu$NS\xspace}
  \newcommand{\uMUX}{$\mu$MUX\xspace}
- \newcommand{\uPhirtHz}{$\upmu \Phi_0/\sqrt{\text{Hz}}$\xspace}
-+\newcommand{\ack}{\section*{Acknowledgments}}
-+\newenvironment{indented}{\begin{description}}{\end{description}}
- 
- \begin{document}
- 
+@@ -35,46 +38,317 @@
  
  \title{Characterization of Aluminum Microwave SQUID Multiplexers for \cevns Detection}
  
 -\author{\mbox{J Amidei\textsuperscript{1}}, \mbox{A Armatol\textsuperscript{2}}, \mbox{C Augier\textsuperscript{2}}, \mbox{L Bailly-Salins\textsuperscript{3}}, \mbox{G Baulieu\textsuperscript{2}}, \mbox{L Bergé\textsuperscript{4}}, \mbox{J Billard\textsuperscript{2}}, \mbox{J Blé\textsuperscript{3}}, \mbox{G Brenot\textsuperscript{3}}, \mbox{G Bres\textsuperscript{5}}, \mbox{J-L Bret\textsuperscript{5}}, \mbox{A Broniatowski\textsuperscript{4}}, \mbox{M Calvo\textsuperscript{5}}, \mbox{A Cavanna\textsuperscript{6}}, \mbox{A Cazes\textsuperscript{2}}, \mbox{E Celi\textsuperscript{7}}, \mbox{D Chaize\textsuperscript{2}}, \mbox{M Chala\textsuperscript{3}}, \mbox{M Chapellier\textsuperscript{4}}, \mbox{L Chaplinsky\textsuperscript{8}}, \mbox{R Chen\textsuperscript{7}}, \mbox{I Cojocari\textsuperscript{4}}, \mbox{J Colas\textsuperscript{2}}, \mbox{L Couraud\textsuperscript{6}}, \mbox{E Cudmore\textsuperscript{9}}, \mbox{M De Jesus\textsuperscript{2}}, \mbox{P de Marcillac\textsuperscript{4}}, \mbox{R Martin\textsuperscript{3}}, \mbox{N Dombrowski\textsuperscript{10}}, \mbox{L Dumoulin\textsuperscript{4}}, \mbox{A Durnez\textsuperscript{6}}, \mbox{R Faure\textsuperscript{2}}, \mbox{S Ferriol\textsuperscript{2}}, \mbox{E Figueroa-Feliciano\textsuperscript{7}}, \mbox{J  A Formaggio\textsuperscript{10, 11}}, \mbox{S Fuard\textsuperscript{12}}, \mbox{J Gascon\textsuperscript{2}}, \mbox{C Girard-Carillo\textsuperscript{3}}, \mbox{A Giuliani\textsuperscript{4}}, \mbox{C Goy\textsuperscript{3}}, \mbox{C Guerin\textsuperscript{2}}, \mbox{L Haegel\textsuperscript{2}}, \mbox{P  M Harrington\textsuperscript{10, 13}}, \mbox{S A Hertel\textsuperscript{8}}, \mbox{C  F Hirjibehedin\textsuperscript{14}}, \mbox{C Hoarau\textsuperscript{3}}, \mbox{Z Hong\textsuperscript{9}}, \mbox{D Howard\textsuperscript{1}}, \mbox{J-C Ianigro\textsuperscript{2}}, \mbox{Y Jin\textsuperscript{6}}, \mbox{A Juillard\textsuperscript{2}}, \mbox{D Karaivanov\textsuperscript{15}}, \mbox{T Khussainov\textsuperscript{15}}\footnote{Also at Institute of Nuclear Physics of the Ministry of Energy of the Republic of Kazakhstan, 1 Ibragimov Street, 050032, Almaty, Kazakhstan}, \mbox{A Kubik\textsuperscript{9}}\footnote{Also at SNOLAB, Creighton Mine \#9, 1039 Regional Road 24, Sudbury, ON P3Y 1N2, Canada}, \mbox{J Lamblin\textsuperscript{3}}, \mbox{T Le Bellec\textsuperscript{2}}, \mbox{L Leroy\textsuperscript{6}}, \mbox{M Li\textsuperscript{10, 11}}, \mbox{A Lubashevskiy\textsuperscript{15}}, \mbox{S Marnieros\textsuperscript{4}}, \mbox{N Martini\textsuperscript{2}}, \mbox{J Minet\textsuperscript{5}}, \mbox{A Monfardini\textsuperscript{5}}, \mbox{F Mounier\textsuperscript{2}}, \mbox{B  M Niedzielski\textsuperscript{14}}, \mbox{V Novati\textsuperscript{3}}, \mbox{W  D Oliver\textsuperscript{11, 13, 16}}, \mbox{E Olivieri\textsuperscript{4}}, \mbox{H D Pinckney\textsuperscript{10, 13}}, \mbox{D V Poda\textsuperscript{4}}, \mbox{D Ponomarev\textsuperscript{15}}\footnote{Also at Lebedev Physical Institute of the Russian Academy of
 -Sciences, 53 Leninskiy Prospect, 119991, Moscow, Russia}, \mbox{J-S Real\textsuperscript{3}}, \mbox{F  C Reyes\textsuperscript{10, 11}}, \mbox{A Rodriguez\textsuperscript{7}}, \mbox{S Rozov\textsuperscript{15}}, \mbox{I Rozova\textsuperscript{15}}, \mbox{B Ryan\textsuperscript{10}}, \mbox{D Sabhari\textsuperscript{7}}, \mbox{S Scorza\textsuperscript{3}}, \mbox{K Serniak\textsuperscript{13, 14}}, \mbox{R Serra\textsuperscript{3, 12}}, \mbox{Ye Shevchik\textsuperscript{15}}, \mbox{T Soldner\textsuperscript{12}}, \mbox{H Stickler\textsuperscript{14}}, \mbox{C Stone-Whitehead\textsuperscript{1}}, \mbox{Ch Ulysse\textsuperscript{6}}, \mbox{W Van De Pontseele\textsuperscript{1}}, \mbox{S Vasilyev\textsuperscript{15}}, \mbox{P Vittaz\textsuperscript{2}}, \mbox{S Weber\textsuperscript{14}}, \mbox{E Wolfe\textsuperscript{1}}, \mbox{W Woods\textsuperscript{14}}, \mbox{E Yakushev\textsuperscript{15}}, \mbox{J Yang\textsuperscript{10, 11}}, \mbox{D Zinatulina\textsuperscript{15}}}
-+\author{J Amidei}
++\author{\mbox{J Amidei}}
 +\affiliation{Physics Department, Colorado School of Mines, Golden, Colorado 80401, USA}
  
 -\address{$^{1}$Physics Department, Colorado School of Mines, Golden, Colorado 80401, USA}
@@ -71,13 +66,13 @@ index f3ab19b..0adfdf6 100644
 -\address{$^{14}$Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
 -\address{$^{15}$Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
 -\address{$^{16}$Electrical Engineering and Computer Science Department, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
-+\author{A Armatol}
++\author{\mbox{A Armatol}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
  
-+\author{C Augier}
++\author{\mbox{C Augier}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
  
-+\author{L Bailly-Salins}
++\author{\mbox{L Bailly-Salins}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
  
 -\ead{jiatongy@mit.edu, wouter.vandepontseele@mines.edu}
@@ -85,292 +80,292 @@ index f3ab19b..0adfdf6 100644
 -\begin{indented}
 -    \item[\today]
 -\end{indented}
-+\author{G Baulieu}
++\author{\mbox{G Baulieu}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
  
-+\author{L Bergé}
++\author{\mbox{L Bergé}}
 +\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
 +
-+\author{J Billard}
++\author{\mbox{J Billard}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{J Blé}
++\author{\mbox{J Blé}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
 +
-+\author{G Brenot}
++\author{\mbox{G Brenot}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
 +
-+\author{G Bres}
++\author{\mbox{G Bres}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, Institut Néel, 38000 Grenoble, France}
 +
-+\author{J-L Bret}
++\author{\mbox{J-L Bret}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, Institut Néel, 38000 Grenoble, France}
 +
-+\author{A Broniatowski}
++\author{\mbox{A Broniatowski}}
 +\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
 +
-+\author{M Calvo}
++\author{\mbox{M Calvo}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, Institut Néel, 38000 Grenoble, France}
 +
-+\author{A Cavanna}
++\author{\mbox{A Cavanna}}
 +\affiliation{Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
 +
-+\author{A Cazes}
++\author{\mbox{A Cazes}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{E Celi}
++\author{\mbox{E Celi}}
 +\affiliation{Department of Physics and Astronomy, Northwestern University, Evanston, Illinois 60208, USA}
 +
-+\author{D Chaize}
++\author{\mbox{D Chaize}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{M Chala}
++\author{\mbox{M Chala}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
 +
-+\author{M Chapellier}
++\author{\mbox{M Chapellier}}
 +\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
 +
-+\author{L Chaplinsky}
++\author{\mbox{L Chaplinsky}}
 +\affiliation{Department of Physics, University of Massachusetts at Amherst, Amherst, Massachusetts 01003, USA}
 +
-+\author{R Chen}
++\author{\mbox{R Chen}}
 +\affiliation{Department of Physics and Astronomy, Northwestern University, Evanston, Illinois 60208, USA}
 +
-+\author{I Cojocari}
++\author{\mbox{I Cojocari}}
 +\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
 +
-+\author{J Colas}
++\author{\mbox{J Colas}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{L Couraud}
++\author{\mbox{L Couraud}}
 +\affiliation{Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
 +
-+\author{E Cudmore}
++\author{\mbox{E Cudmore}}
 +\affiliation{Department of Physics, University of Toronto, Toronto, Ontario M5S 1A7, Canada}
 +
-+\author{M De Jesus}
++\author{\mbox{M De Jesus}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{P de Marcillac}
++\author{\mbox{P de Marcillac}}
 +\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
 +
-+\author{R Martin}
++\author{\mbox{R Martin}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
 +
-+\author{N Dombrowski}
++\author{\mbox{N Dombrowski}}
 +\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +
-+\author{L Dumoulin}
++\author{\mbox{L Dumoulin}}
 +\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
 +
-+\author{A Durnez}
++\author{\mbox{A Durnez}}
 +\affiliation{Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
 +
-+\author{R Faure}
++\author{\mbox{R Faure}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{S Ferriol}
++\author{\mbox{S Ferriol}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{E Figueroa-Feliciano}
++\author{\mbox{E Figueroa-Feliciano}}
 +\affiliation{Department of Physics and Astronomy, Northwestern University, Evanston, Illinois 60208, USA}
 +
-+\author{J A Formaggio}
++\author{\mbox{J A Formaggio}}
 +\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +\affiliation{Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +
-+\author{S Fuard}
++\author{\mbox{S Fuard}}
 +\affiliation{Institut Laue-Langevin, CS 20156, 38042 Grenoble Cedex 9, France}
 +
-+\author{J Gascon}
++\author{\mbox{J Gascon}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{C Girard-Carillo}
++\author{\mbox{C Girard-Carillo}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
 +
-+\author{A Giuliani}
++\author{\mbox{A Giuliani}}
 +\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
 +
-+\author{C Goy}
++\author{\mbox{C Goy}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
 +
-+\author{C Guerin}
++\author{\mbox{C Guerin}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{L Haegel}
++\author{\mbox{L Haegel}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{P M Harrington}
++\author{\mbox{P M Harrington}}
 +\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +\affiliation{Research Laboratory of Electronics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +
-+\author{S A Hertel}
++\author{\mbox{S A Hertel}}
 +\affiliation{Department of Physics, University of Massachusetts at Amherst, Amherst, Massachusetts 01003, USA}
 +
-+\author{C F Hirjibehedin}
++\author{\mbox{C F Hirjibehedin}}
 +\affiliation{Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
 +
-+\author{C Hoarau}
++\author{\mbox{C Hoarau}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
 +
-+\author{Z Hong}
++\author{\mbox{Z Hong}}
 +\affiliation{Department of Physics, University of Toronto, Toronto, Ontario M5S 1A7, Canada}
 +
-+\author{D Howard}
++\author{\mbox{D Howard}}
 +\affiliation{Physics Department, Colorado School of Mines, Golden, Colorado 80401, USA}
 +
-+\author{J-C Ianigro}
++\author{\mbox{J-C Ianigro}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{Y Jin}
++\author{\mbox{Y Jin}}
 +\affiliation{Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
 +
-+\author{A Juillard}
++\author{\mbox{A Juillard}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{D Karaivanov}
++\author{\mbox{D Karaivanov}}
 +\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
 +
-+\author{T Khussainov}
++\author{\mbox{T Khussainov}}
 +\altaffiliation{also at: Institute of Nuclear Physics of the Ministry of Energy of the Republic of Kazakhstan, 1 Ibragimov Street, 050032, Almaty, Kazakhstan}
 +\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
 +
-+\author{A Kubik}
++\author{\mbox{A Kubik}}
 +\altaffiliation{also at: SNOLAB, Creighton Mine \#9, 1039 Regional Road 24, Sudbury, ON P3Y 1N2, Canada}
 +\affiliation{Department of Physics, University of Toronto, Toronto, Ontario M5S 1A7, Canada}
 +
-+\author{J Lamblin}
++\author{\mbox{J Lamblin}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
 +
-+\author{T Le Bellec}
++\author{\mbox{T Le Bellec}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{L Leroy}
++\author{\mbox{L Leroy}}
 +\affiliation{Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
 +
-+\author{M Li}
++\author{\mbox{M Li}}
 +\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +\affiliation{Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +
-+\author{A Lubashevskiy}
++\author{\mbox{A Lubashevskiy}}
 +\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
 +
-+\author{S Marnieros}
++\author{\mbox{S Marnieros}}
 +\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
 +
-+\author{N Martini}
++\author{\mbox{N Martini}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{J Minet}
++\author{\mbox{J Minet}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, Institut Néel, 38000 Grenoble, France}
 +
-+\author{A Monfardini}
++\author{\mbox{A Monfardini}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, Institut Néel, 38000 Grenoble, France}
 +
-+\author{F Mounier}
++\author{\mbox{F Mounier}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{B M Niedzielski}
++\author{\mbox{B M Niedzielski}}
 +\affiliation{Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
 +
-+\author{V Novati}
++\author{\mbox{V Novati}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
 +
-+\author{W D Oliver}
++\author{\mbox{W D Oliver}}
 +\affiliation{Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +\affiliation{Research Laboratory of Electronics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +\affiliation{Electrical Engineering and Computer Science Department, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +
-+\author{E Olivieri}
++\author{\mbox{E Olivieri}}
 +\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
 +
-+\author{H D Pinckney}
++\author{\mbox{H D Pinckney}}
 +\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +\affiliation{Research Laboratory of Electronics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +
-+\author{D V Poda}
++\author{\mbox{D V Poda}}
 +\affiliation{Université Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France}
 +
-+\author{D Ponomarev}
++\author{\mbox{D Ponomarev}}
 +\altaffiliation{also at: Lebedev Physical Institute of the Russian Academy of Sciences, 53 Leninskiy Prospect, 119991, Moscow, Russia}
 +\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
 +
-+\author{J-S Real}
++\author{\mbox{J-S Real}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
 +
-+\author{F C Reyes}
++\author{\mbox{F C Reyes}}
 +\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +\affiliation{Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +
-+\author{A Rodriguez}
++\author{\mbox{A Rodriguez}}
 +\affiliation{Department of Physics and Astronomy, Northwestern University, Evanston, Illinois 60208, USA}
 +
-+\author{S Rozov}
++\author{\mbox{S Rozov}}
 +\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
 +
-+\author{I Rozova}
++\author{\mbox{I Rozova}}
 +\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
 +
-+\author{B Ryan}
++\author{\mbox{B Ryan}}
 +\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +
-+\author{D Sabhari}
++\author{\mbox{D Sabhari}}
 +\affiliation{Department of Physics and Astronomy, Northwestern University, Evanston, Illinois 60208, USA}
 +
-+\author{S Scorza}
++\author{\mbox{S Scorza}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
 +
-+\author{K Serniak}
++\author{\mbox{K Serniak}}
 +\affiliation{Research Laboratory of Electronics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +\affiliation{Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
 +
-+\author{R Serra}
++\author{\mbox{R Serra}}
 +\affiliation{Université Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, 38000 Grenoble, France}
 +\affiliation{Institut Laue-Langevin, CS 20156, 38042 Grenoble Cedex 9, France}
 +
-+\author{Ye Shevchik}
++\author{\mbox{Ye Shevchik}}
 +\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
 +
-+\author{T Soldner}
++\author{\mbox{T Soldner}}
 +\affiliation{Institut Laue-Langevin, CS 20156, 38042 Grenoble Cedex 9, France}
 +
-+\author{H Stickler}
++\author{\mbox{H Stickler}}
 +\affiliation{Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
 +
-+\author{C Stone-Whitehead}
++\author{\mbox{C Stone-Whitehead}}
 +\affiliation{Physics Department, Colorado School of Mines, Golden, Colorado 80401, USA}
 +
-+\author{Ch Ulysse}
++\author{\mbox{Ch Ulysse}}
 +\affiliation{Université Paris-Saclay, CNRS, C2N, Palaiseau, 91120 Palaiseau, France}
 +
-+\author{W Van De Pontseele}
++\author{\mbox{W Van De Pontseele}}
 +\email{wouter.vandepontseele@mines.edu}
 +\affiliation{Physics Department, Colorado School of Mines, Golden, Colorado 80401, USA}
 +
-+\author{S Vasilyev}
++\author{\mbox{S Vasilyev}}
 +\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
 +
-+\author{P Vittaz}
++\author{\mbox{P Vittaz}}
 +\affiliation{Université Lyon 1, CNRS, IP2I, UMR 5822, Villeurbanne, France}
 +
-+\author{S Weber}
++\author{\mbox{S Weber}}
 +\affiliation{Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
 +
-+\author{E Wolfe}
++\author{\mbox{E Wolfe}}
 +\affiliation{Physics Department, Colorado School of Mines, Golden, Colorado 80401, USA}
 +
-+\author{W Woods}
++\author{\mbox{W Woods}}
 +\affiliation{Lincoln Laboratory, Massachusetts Institute of Technology, Lexington, Massachusetts 02421, USA}
 +
-+\author{E Yakushev}
++\author{\mbox{E Yakushev}}
 +\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
 +
-+\author{J Yang}
++\author{\mbox{J Yang}}
 +\email{jiatongy@mit.edu}
 +\affiliation{Laboratory for Nuclear Science, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +\affiliation{Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA}
 +
-+\author{D Zinatulina}
++\author{\mbox{D Zinatulina}}
 +\affiliation{Department of Nuclear Spectroscopy and Radiochemistry, Laboratory of Nuclear Problems, JINR, Dubna, Moscow Region 141980, Russia}
 +
 +\date{\today}
@@ -378,22 +373,129 @@ index f3ab19b..0adfdf6 100644
  \begin{abstract}
  We present the design, fabrication, and characterization of an aluminum-based six-channel microwave SQUID multiplexer (\uMUX) prototype for transition-edge sensor (TES) readout in the \ricochet experiment. The device consists of aluminum coplanar-waveguide resonators and RF SQUIDs with Dolan-style Al/AlO$_x$/Al Josephson junctions. By measuring the resonator scattering parameters at a range of probe tone frequencies, powers, and flux bias points, we demonstrate agreement between the device response and existing multiplexer models. We also characterize the noise performance in both open-loop and flux-ramping modes. With a high electron mobility transistor (HEMT) amplifier, open-loop measurements yield a flux sensitivity of 1--1.5~\uPhirtHz. With flux-ramp modulation, low-frequency $1/f$ noise is suppressed, and the flux sensitivity is around 3--4~\uPhirtHz, corresponding to a current sensitivity of 24--33~$\mathrm{pA}/\sqrt{\mathrm{Hz}}$ at the input coil. We further demonstrate a reduction in readout noise by incorporating a Josephson traveling-wave parametric amplifier (JTWPA) between the \uMUX and the HEMT. This achieves an open-loop flux sensitivity of 0.3--0.6~\uPhirtHz and an effective system noise temperature below \qty{1}{\K}. These results establish aluminum $\mu$MUX devices as a viable and extensible readout technology for low-noise cryogenic detector arrays.
 -\end{abstract}
+-
  
 +\medskip
 +\noindent\textbf{Keywords}: microwave SQUID multiplexer, cryogenic sensor array readout, aluminum fabrication process, Josephson traveling-wave parametric amplifier
  
-+\end{abstract}
- 
 -\vspace{2pc}
 -\noindent{\it Keywords}: microwave SQUID multiplexer, cryogenic sensor array readout, aluminum fabrication process, Josephson traveling-wave parametric amplifier
--
++\end{abstract}
+ 
 -\submitto{\SUST}
 -\ioptwocol
 +\maketitle
  
  %-----------------------------------------------
  \section{Introduction}
-@@ -706,7 +982,7 @@ The measurement is repeated for several input powers below the \qty{1}{\dB} comp
+@@ -257,7 +531,7 @@ At a fixed flux bias, we measure the $S_{21}$ of the whole RF chain, as shown in
+     \label{fig:all_res_trace}
+ \end{figure}
+ 
+-Using the circle fit algorithm detailed in \cite{probst_efficient_2015}, we extract the quality factors of the resonators. The resulting values of $Q_i$, $Q_c$, and $Q_l$ are summarized in table~\ref{tab:quality_factors}. The internal quality factors $Q_i$ are above $7\times10^4$ for most channels, with the exception of channels 2 and 6. The coupling quality factors $Q_c$ are approximately $1.4\times10^4$ across all channels, placing the device close to the $Q_i \gg Q_c$ regime that is generally desirable. These $Q_i$ values are reduced relative to other resonators constructed from high-quality superconductors, likely due to the geometry near the termination and coupling to many potentially lossy components, such as the SQUID, input coil, and flux bias line. Although it is not entirely clear what limits the resonator $Q_i$, we observe flux-dependent variation of $Q_i$, which can be described by the resistively and capacitively shunted junction (RCSJ) model as found in~\cite{kempf_design_2017}. We discuss this $Q_i$ variation in more detail in \ref{appx:Qi}.
++Using the circle fit algorithm detailed in \cite{probst_efficient_2015}, we extract the quality factors of the resonators. The resulting values of $Q_i$, $Q_c$, and $Q_l$ are summarized in table~\ref{tab:quality_factors}. The internal quality factors $Q_i$ are above $7\times10^4$ for most channels, with the exception of channels 2 and 6. The coupling quality factors $Q_c$ are approximately $1.4\times10^4$ across all channels, placing the device close to the $Q_i \gg Q_c$ regime that is generally desirable. These $Q_i$ values are reduced relative to other resonators constructed from high-quality superconductors, likely due to the geometry near the termination and coupling to many potentially lossy components, such as the SQUID, input coil, and flux bias line. Although it is not entirely clear what limits the resonator $Q_i$, we observe flux-dependent variation of $Q_i$, which can be described by the resistively and capacitively shunted junction (RCSJ) model as found in~\cite{kempf_design_2017}. We discuss this $Q_i$ variation in more detail in Appendix~\ref{appx:Qi}.
+ 
+ \begin{table}[htb]
+     \centering
+@@ -440,7 +714,7 @@ Using the circuit parameters extracted in sections~\ref{results:low_rf_pwr} and
+     6 & 1.27 & $1.26 (19)$ & 124.80 & 0.84\\
+     \hline
+     \end{tabular}
+-    \caption{Predicted and measured open-loop flux equivalent noise in units of \uPhirtHz. For the measured $\sqrt{S_{\Phi,w}}$ values, the numbers in the parentheses indicate the estimated uncertainty. See \ref{appx:uncertainties} for more details on the uncertainty estimation. Channels 5 and 6 have significantly higher uncertainty than the other channels. This is because these two channels have larger low frequency noise, which increases the uncertainty of the measured transfer function $d\Phi/d\mathrm{Im}(S_{21})$.}
++    \caption{Predicted and measured open-loop flux equivalent noise in units of \uPhirtHz. For the measured $\sqrt{S_{\Phi,w}}$ values, the numbers in the parentheses indicate the estimated uncertainty. See Appendix~\ref{appx:uncertainties} for more details on the uncertainty estimation. Channels 5 and 6 have significantly higher uncertainty than the other channels. This is because these two channels have larger low frequency noise, which increases the uncertainty of the measured transfer function $d\Phi/d\mathrm{Im}(S_{21})$.}
+     \label{tab:open_loop_noise}
+ \end{table}
+ 
+@@ -460,11 +734,11 @@ The FRM noise is measured with a ramp frequency of $f_{\mathrm{ramp}} = $~\qty{1
+     6 & $3.9 (2)$\\
+     \hline
+     \end{tabular}
+-    \caption{FRM flux sensitivity. The numbers in the parentheses indicate the estimated uncertainty. See \ref{appx:uncertainties} for more details on uncertainty estimation.}
++    \caption{FRM flux sensitivity. The numbers in the parentheses indicate the estimated uncertainty. See Appendix~\ref{appx:uncertainties} for more details on uncertainty estimation.}
+     \label{tab:FRM_noise}
+ \end{table}
+ 
+-Lastly, we checked the linearity of the flux reconstruction in FRM mode. The deviation from a perfectly linear response is around 1 $\mathrm{m}\Phi_0$ (see \ref{appx:linearity} for details).
++Lastly, we checked the linearity of the flux reconstruction in FRM mode. The deviation from a perfectly linear response is around 1 $\mathrm{m}\Phi_0$ (see Appendix~\ref{appx:linearity} for details).
+ 
+ 
+ %%%---------------------------------------------
+@@ -490,7 +764,7 @@ The JTWPA is installed in between a pair of switches right after the device on t
+     \label{fig:TWPA_compression}
+ \end{figure}
+ 
+-Our JTWPA is not optimized to operate at the optimal probe tone power of the present multiplexer device (\mbox{$\approx$~\qty{-76}{dBm}}). Therefore, we must select a power that somewhat preserves the \uMUX noise sensitivity while avoiding substantial gain compression in the JTWPA. By scanning $P_{\mathrm{exc}}$, we characterized the gain compression profile of the JTWPA near the resonator frequencies of this device (see figure~\ref{fig:TWPA_compression}). Using the attenuation extracted in section~\ref{results:power_calib} and assuming negligible additional losses in the circuit, we determine a \qty{1}{\dB} compression point ($P_{-1\text{dB}}$) between $-90$ and \qty{-85}{dBm}. As anticipated, this compression threshold lies below the optimal operating power of a single \uMUX channel. As a compromise, we chose to operate at \mbox{$P_{\mathrm{exc}} = -84~\mathrm{dBm} \approx P_{-1\text{dB}}$}. We are also aware that operating near the nonlinear regime of the JTWPA can generate third-order intermodulation products, leading to crosstalk between tones~\cite{mates_crosstalk_2019}. From the measurements described in~\ref{appx:TWPA_IP3}, we obtain the input-referred third-order intercept point \mbox{$\mathrm{IIP3} \approx$ \qty{-82.5}{dBm}}, which is comparable to our operating power. While this does not affect the present measurements since we probe one channel at a time, it highlights the need for higher dynamic range amplifiers for multi-channel multiplexed operation.
++Our JTWPA is not optimized to operate at the optimal probe tone power of the present multiplexer device (\mbox{$\approx$~\qty{-76}{dBm}}). Therefore, we must select a power that somewhat preserves the \uMUX noise sensitivity while avoiding substantial gain compression in the JTWPA. By scanning $P_{\mathrm{exc}}$, we characterized the gain compression profile of the JTWPA near the resonator frequencies of this device (see figure~\ref{fig:TWPA_compression}). Using the attenuation extracted in section~\ref{results:power_calib} and assuming negligible additional losses in the circuit, we determine a \qty{1}{\dB} compression point ($P_{-1\text{dB}}$) between $-90$ and \qty{-85}{dBm}. As anticipated, this compression threshold lies below the optimal operating power of a single \uMUX channel. As a compromise, we chose to operate at \mbox{$P_{\mathrm{exc}} = -84~\mathrm{dBm} \approx P_{-1\text{dB}}$}. We are also aware that operating near the nonlinear regime of the JTWPA can generate third-order intermodulation products, leading to crosstalk between tones~\cite{mates_crosstalk_2019}. From the measurements described in Appendix~\ref{appx:TWPA_IP3}, we obtain the input-referred third-order intercept point \mbox{$\mathrm{IIP3} \approx$ \qty{-82.5}{dBm}}, which is comparable to our operating power. While this does not affect the present measurements since we probe one channel at a time, it highlights the need for higher dynamic range amplifiers for multi-channel multiplexed operation.
+ 
+ \begin{figure}[htb]
+     \centering
+@@ -545,14 +819,20 @@ Overall, this work establishes aluminum $\mu$MUX devices as a viable and scalabl
+ 
+ 
+ 
+-\ack
++\begin{acknowledgments}
+ We are grateful to Kate Azar, Gabriel Cutter, and Yijie Wang for their assistance with device photography. We also thank Dr. John A. B. Mates and Dr. Manuel E. Garcia Redondo for insightful discussions. This work was supported by DOE QuantISED award DE-SC0020181, NSF under Grant PHY-2209585, and the Undersecretary of Defense for Research and Engineering under Air Force Contract No. FA8702-15-D-0001. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of the U.S. Government or the Undersecretary of Defense for Research and Engineering.
+ 
+ The \ricochet project received funding from the European Research Council (ERC) under the European Union’s Horizon2020 research and innovation program under the Grant Agreement ERC-StGCENNS 803079, the French National Research Agency (ANR) within the project ANR-20-CE31-0006, the project ANR-22-EXES-0001, the LabEx Lyon Institute of Origins (ANR-10-LABX-0066) of the Université de Lyon, within the Plan France2030, Natural Sciences and Engineering Research Council of Canada (NSERC), the Canada First Excellence Research Fund, and the Arthur B. McDonald Institute (Canada). This work is also partly supported within the State Project “Science” by the Ministry of Science and Higher Education of the Russian Federation (075-15-2024-541).
+ 
++\end{acknowledgments}
++
+ \appendix
+ \section{Flux dependence of $Q_i$} \label{appx:Qi}
+ 
++
++
++We observe a periodic variation of the internal quality factor $Q_i$ with applied flux (see figure~\ref{fig:Qi_fit}). The maximum and minimum values of $Q_i$ of all channels are listed in table~\ref{tab:R_sg_fits}. In an ideal dissipationless SQUID, $Q_i$ would be independent of flux. Therefore the flux dependence of $Q_i$ indicates a potential dissipation mechanism associated with the RF SQUID. To identify the dominant source of this dissipation, we consider two possible mechanisms: loss through the flux bias line and dissipation originating from the Josephson junction itself.
++
+ \begin{figure}[htb]
+     \centering
+     \includegraphics[width=\columnwidth]{figures/Qi_resonator_5_fit_v2.0.pdf}
+@@ -578,8 +858,6 @@ The \ricochet project received funding from the European Research Council (ERC)
+     \label{tab:R_sg_fits}
+ \end{table}
+ 
+-We observe a periodic variation of the internal quality factor $Q_i$ with applied flux (see figure~\ref{fig:Qi_fit}). The maximum and minimum values of $Q_i$ of all channels are listed in table~\ref{tab:R_sg_fits}. In an ideal dissipationless SQUID, $Q_i$ would be independent of flux. Therefore the flux dependence of $Q_i$ indicates a potential dissipation mechanism associated with the RF SQUID. To identify the dominant source of this dissipation, we consider two possible mechanisms: loss through the flux bias line and dissipation originating from the Josephson junction itself.
+-
+ The first possible dissipation pathway is through the flux bias line. The wiring to room temperature contributes approximately $R_F = 23~\Omega$ of resistance. The LC low-pass $\pi$-filter on this line introduces an inductance of $L_F = 3300~\mathrm{nH}$. Following the analysis in~\cite{mates_microwave_2011}, the upper limit on $Q_i$ imposed by this dissipation channel is
+ \begin{gather}
+ Q_i =
+@@ -670,20 +948,28 @@ The FRM sensitivity is determined in an analogous manner. The measured FRM NSD i
+ \end{gather}
+ and the fitted parameter $S_{\mathrm{FRM},w}$ is taken as the white noise level. The statistical uncertainty on $S_{\mathrm{FRM},w}$ is estimated from the covariance matrix of the fit parameters. Here each NSD is obtained by averaging 10 raw traces, each containing 680 frequency bins. Taking into account the averaging, the resulting relative statistical uncertainty is approximately 1\% (see table~\ref{tab:uncertainties}).
+ 
++\begin{figure}[t]
++    \centering
++    \includegraphics[width=\columnwidth]{figures/R4_HEMT_optimal_pwr_1_linearity_v1.1.pdf}
++    \caption{Linearity check of channel 1 at its optimal probe tone power. The top plot shows the demodulated flux as a function of the injected flux. The bottom plot shows the residual of the measured response against a perfectly linear response.}
++    \label{fig:HEMT_only_linearity}
++\end{figure}
++
++
++
+ To estimate the systematic uncertainty, we inject a flux signal whose amplitude is independently calibrated using DC measurements. Specifically, we apply a \qty{1}{\Hz} triangle wave through the flux bias line and reconstruct its amplitude using FRM demodulation. The difference between the reconstructed amplitude $A_{\mathrm{FRM}}$ and the DC-calibrated amplitude $A_{\mathrm{DC}}$ is used to quantify the systematic uncertainty. The relative systematic uncertainty on $S_{\mathrm{FRM},w}$ is taken to be $|A_{\mathrm{FRM}} - A_{\mathrm{DC}}|/{|A_{\mathrm{DC}}|}$,
+ with values summarized in table~\ref{tab:uncertainties}. In principle, this systematic contribution can be calibrated out if the signal pulse shape is well known. Since this calibration was not performed in this work, we retain this contribution to the uncertainty in this work. Then the statistical and systematic uncertainties are added in quadrature to obtain the total uncertainty. Since the calibration is performed with a \qty{1}{\Hz} triangle wave, which may not represent the response to actual detector pulses, we conservatively adopt a total uncertainty of 5\% for all channels in the main text (see table~\ref{tab:FRM_noise}).
+ 
+ 
+ \section{FRM linearity} \label{appx:linearity}
+ 
++
++
+ We evaluated the linearity of the flux reconstruction in FRM mode. To do so, we injected a slow flux signal through the common flux bias line while the fast sawtooth flux-ramp signal was active. The injected signal was a symmetric \qty{1}{\Hz} triangle wave with a peak-to-peak amplitude of approximately $3$--$4\,\Phi_0$. This slow modulation acts as a quasi-static flux offset relative to the ramp frequency and allows us to probe the linearity of the demodulated response over multiple flux quanta. Figure~\ref{fig:HEMT_only_linearity} shows the FRM demodulated flux as a function of the injected flux for channel~1, along with the residuals relative to an ideal linear response. The injected flux is calculated by rescaling the voltage bias to match the demodulated flux. The measured response is highly linear across the full range of injected flux. The residual nonlinearity is on the order of $1\,\mathrm{m}\Phi_0$, comparable to the performance reported in~\cite{mates_flux-ramp_2012}.
+ 
+-\begin{figure}[htb]
+-    \centering
+-    \includegraphics[width=\columnwidth]{figures/R4_HEMT_optimal_pwr_1_linearity_v1.1.pdf}
+-    \caption{Linearity check of channel 1 at its optimal probe tone power. The top plot shows the demodulated flux as a function of the injected flux. The bottom plot shows the residual of the measured response against a perfectly linear response.}
+-    \label{fig:HEMT_only_linearity}
+-\end{figure}
++
++
++
+ 
+ \section{JTWPA IP3 point measurement} \label{appx:TWPA_IP3}
+ 
+@@ -706,7 +992,7 @@ The measurement is repeated for several input powers below the \qty{1}{\dB} comp
  
  
  \bibliography{references}

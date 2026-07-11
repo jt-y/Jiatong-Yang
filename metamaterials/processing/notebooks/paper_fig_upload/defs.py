@@ -231,6 +231,19 @@ def fourier_symmetrized_amplitude(points, kx_ops, ky_ops):
     ft_vals = np.abs((amp[None, :] * np.exp(-1j * phases)).sum(axis=1))
     return ft_vals.mean()
 
+def fourier_symmetrized_amplitude_squared(points, kx_ops, ky_ops):
+    """Mean |FT|^2 over all symmetry-related k-points for one sublattice."""
+
+    pts = np.asarray(points)
+    x = pts[:, 0]
+    y = pts[:, 1]
+    amp = pts[:, 2]
+    phase0 = np.deg2rad(pts[:, 3])
+
+    phases = np.outer(kx_ops, x) + np.outer(ky_ops, y) + phase0
+    ft_vals = np.abs((amp[None, :] * np.exp(-1j * phases)).sum(axis=1)) ** 2
+    return ft_vals.mean()
+
 ####### Visualization functions
     
 
